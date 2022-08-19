@@ -3,12 +3,24 @@ public  class BankAccount{
     private int id;
     private double balance;
 
+    // A constructor.
+    public BankAccount() {
+        name = "juan perez";
+        id = 1200;
+        balance = 2000;
+    }
+    // A constructor.
     public BankAccount(String name, int id, double balance) {
         this.name = name;
         this.id = id;
         this.balance = balance;
     }
 
+    /**
+     * This function returns the name of the person
+     * 
+     * @return The name of the person.
+     */
     public String getName() {
         return name;
     }
@@ -29,12 +41,23 @@ public  class BankAccount{
         this.id = id;
     }
 
+    /**
+     * This function takes in a double amount and adds it to the balance
+     * 
+     * @param amount The amount to deposit
+     * @return The balance is being returned.
+     */
     public double deposit(double amount) {
-        return balance += amount;
+        return  balance += amount;
     }
 
     public double withdraw(double amount) {
-        return balance -= amount;
+        balance -= amount;
+        if(balance < 0){
+            balance = 0;
+            System.out.println("Balance is less than 0");
+        }
+        return balance;
     }
 
     public String toString() {
