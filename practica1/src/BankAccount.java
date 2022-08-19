@@ -48,15 +48,20 @@ public  class BankAccount{
      * @return The balance is being returned.
      */
     public double deposit(double amount) {
+        System.out.println("Balance after deposit: ");
         return  balance += amount;
     }
 
     public double withdraw(double amount) {
-        balance -= amount;
-        if(balance < 0){
+        double balanceTemp = balance - amount;
+        if(balanceTemp < 0){
             balance = 0;
-            System.out.println("Balance is less than 0");
+            System.out.println("Error: You can't withdraw more than you have");
+            System.out.println("You have left: ");
+            return balance;
         }
+        balance = balanceTemp;
+        System.out.println("Balance after withdraw: ");
         return balance;
     }
 
