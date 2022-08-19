@@ -14,11 +14,12 @@ public class AppCoffe {
         while (!exit) {
  
             // Printing the menu options.
-            System.out.println("1.Fill Coffee");
+            System.out.println("\n1.Fill Coffee");
             System.out.println("2.Serve Coffe");
             System.out.println("3.Add Coffe");
             System.out.println("4.Empty Coffe");
-            System.out.println("5.Exit");
+            System.out.println("5. Setters and Getters");
+            System.out.println("6.Exit");
  
             try {
  
@@ -52,6 +53,51 @@ public class AppCoffe {
                         System.out.println(maker.emptyCoffe());
                         break;
                     case 5:
+                        while(!exit){
+                            System.out.println("\n1.get Ammount Max");
+                            System.out.println("2.get Ammount");
+                            System.out.println("3.set Ammount Max");
+                            System.out.println("4.set Ammount");
+                            System.out.println("5.toString");
+                            System.out.println("6.Exit");
+                            try {
+ 
+                                System.out.println("Select an option");
+                                op = sn.nextInt();
+                 
+                                switch (op) {
+                                    case 1:
+                                        System.out.println(maker.getAmmountMax());
+                                        break;
+                                    case 2:
+                                        System.out.println(maker.getAmmount());
+                                        break;
+                                    case 3:
+                                        System.out.println("Enter new ammountMax");
+                                        int ammountMax = sn.nextInt();
+                                        maker.setAmmountMax(ammountMax);
+                                        break;
+                                    case 4:
+                                        System.out.println("Enter new ammount");
+                                        int ammount = sn.nextInt();
+                                        maker.setAmmount(ammount);
+                                        break;
+                                    case 5:
+                                        System.out.println(maker.toString());
+                                        break;
+                                    case 6:
+                                        exit = true;
+                                        break;
+                                    default:
+                                        System.out.println("Select a valid option");
+                                }
+                            } catch (InputMismatchException e) {
+                                System.out.println("invalid option");
+                                sn.next();   
+                            }
+                        }
+                        break;
+                    case 6:
                         exit = true;
                         break;
                     default:
