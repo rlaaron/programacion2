@@ -18,7 +18,7 @@ public class AppCoffe {
             System.out.println("2.Serve Coffe");
             System.out.println("3.Add Coffe");
             System.out.println("4.Empty Coffe");
-            System.out.println("5. Setters and Getters");
+            System.out.println("5.Setters and Getters");
             System.out.println("6.Exit");
  
             try {
@@ -52,8 +52,10 @@ public class AppCoffe {
                         System.out.println("Emptying coffe");
                         System.out.println(maker.emptyCoffe());
                         break;
+                    // This is a setter and getters.
                     case 5:
                         while(!exit){
+                            // A menu for the user to select an option.
                             System.out.println("\n1.get Ammount Max");
                             System.out.println("2.get Ammount");
                             System.out.println("3.set Ammount Max");
