@@ -1,3 +1,6 @@
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
+import javax.swing.text.html.HTMLDocument.RunElement;
+
 public class Date {
     // Declaring the variables that will be used in the class.
     private int day;
@@ -107,7 +110,7 @@ public class Date {
                 days = 28;
             }
         }
-        System.out.println("Days passed: ");
+        // System.out.println("Days passed: ");
         return days;
     }
     /**
@@ -211,17 +214,18 @@ public class Date {
         int newDay = day + days;
         int newMonth = month;
         int newYear = year;
-        if(newDay > days(month, year)){
-            newDay -= days(month, year);
+        while(newDay > days(newMonth, newYear)){
+            newDay -= days(newMonth, newYear);
             newMonth++;
-        }
-        if(newMonth > 12){
-            newMonth -= 12;
-            newYear++;
+            if(newMonth > 12){
+                newMonth = 1;
+                newYear++;
+            }
         }
         return newDay + "/" + newMonth + "/" + newYear;
     }
 
+     
     /**
      * If the day is greater than the number of days in the month, subtract the number of days in the
      * month from the day, increment the month, and if the month is greater than 12, subtract 12 from
@@ -241,6 +245,8 @@ public class Date {
             newMonth -= 12;
             newYear++;
         }
+        //revisar la modificacion de la fecha
+
         return newDay + "/" + newMonth + "/" + newYear;
     }
 
@@ -263,7 +269,13 @@ public class Date {
             newMonth += 12;
             newYear--;
         }
-        return newDay + "/" + newMonth + "/" + newYear;
+        return newDay + "/" + newMonth + "," + newYear;
     }
 
+    public String toString(){
+        return "Date: [day = " + day + ", month = " + month + ",year = " + year + "]\n";
+        
+    }
+    
+    
 }

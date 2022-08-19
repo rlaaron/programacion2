@@ -1,15 +1,16 @@
 public  class BankAccount{
+    // Declaring the variables that will be used in the class.
     private String name;
     private int id;
     private double balance;
 
-    // A constructor.
+    // A constructor deafault.
     public BankAccount() {
         name = "juan perez";
         id = 1200;
         balance = 2000;
     }
-    // A constructor.
+    // Param constructor.
     public BankAccount(String name, int id, double balance) {
         this.name = name;
         this.id = id;
@@ -21,6 +22,8 @@ public  class BankAccount{
      * 
      * @return The name of the person.
      */
+
+    //getters
     public String getName() {
         return name;
     }
@@ -33,6 +36,7 @@ public  class BankAccount{
         return balance;
     }
 
+    //stters
     public void setName(String name) {
         this.name = name;
     }
@@ -55,7 +59,6 @@ public  class BankAccount{
     public double withdraw(double amount) {
         double balanceTemp = balance - amount;
         if(balanceTemp < 0){
-            balance = 0;
             System.out.println("Error: You can't withdraw more than you have");
             System.out.println("You have left: ");
             return balance;

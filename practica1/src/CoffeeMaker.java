@@ -18,9 +18,10 @@ public class CoffeeMaker {
     // param construcctor.
     public CoffeeMaker(double ammountMax, double ammount){
         this.ammountMax = ammountMax;
-        this.ammount = ammount;
         if(ammount>ammountMax){
-            ammountMax = ammount;
+            ammount = ammountMax;
+        }else{
+            this.ammount = ammount;
         }
     }
 
@@ -63,8 +64,8 @@ public class CoffeeMaker {
         if (ammount<cup){
             ammount = 0;
             return "CoffeeMaker is empty the rest was served\n"; 
-        } 
-        ammount -= cup;
+        }
+        
         return "CoffeeMaker has " + ammount + " ml\n";
     }
 
@@ -75,12 +76,11 @@ public class CoffeeMaker {
      * @return The ammount of coffee in the coffee maker.
      */
     public double addCoffe(int cup){
-        double ammountTemp = ammount + cup;
-        if(ammountTemp>ammountMax){
-            System.out.println("CoffeeMaker is full cannot add more coffee\n");
+        if(cup>ammount){
+            System.out.println("CoffeeMaker cannot receive as much coffee\n");
+        }else{
+            ammount += cup;
         }
-        ammount = ammountTemp;
-        System.out.println("CoffeeMaker has " + ammount + " ml\n");
         return ammount;
 
     }
