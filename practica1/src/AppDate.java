@@ -56,11 +56,11 @@ public class AppDate {
                         System.out.println(date.dateAfter(days));
                         break;
                     case 8:
-                        System.out.println("Next day: ");
+                        System.out.println("Change date to the next day: ");
                         System.out.println(date.nextDay());
                         break;
                     case 9:
-                        System.out.println("Before day: ");
+                        System.out.println("Change date to the previous day: ");
                         System.out.println(date.backDay());
                         break;
                     case 10:
