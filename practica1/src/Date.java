@@ -43,11 +43,20 @@ public class Date {
 
     // setters.
     public void setDay(int day){
-        this.day = day;
+        if(checkDate(month, day, year)){
+            this.day = day;
+        }else{
+            this.day = 1;
+        }
     }
 
     public void setMonth(int month){
-        this.month = month;
+        if(checkDate(month, day, year)){
+            this.month = month;
+        }else{
+            this.month = 1;
+        }
+        
     }
 
     public void setYear(int year){
@@ -84,6 +93,7 @@ public class Date {
             this.day = 1;
             this.month = 1;
             this.year = 1900;
+            this.leapYear = false;
         }
     }
     
