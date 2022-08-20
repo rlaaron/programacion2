@@ -262,9 +262,12 @@ public class Date {
             newMonth -= 12;
             newYear++;
         }
-        //revisar la modificacion de la fecha
+        
+        this.day = newDay;
+        this.month = newMonth;
+        this.year = newYear;
 
-        return newDay + "/" + newMonth + "/" + newYear;
+        return "New date is: " + newDay + "/" + newMonth + "/" + newYear;
     }
 
     /**
@@ -286,7 +289,11 @@ public class Date {
             newMonth += 12;
             newYear--;
         }
-        return newDay + "/" + newMonth + "," + newYear;
+        this.day = newDay;
+        this.month = newMonth;
+        this.year = newYear;
+
+        return "New date is: " + newDay + "/" + newMonth + "/" + newYear;
     }
 
     public String toString(){
