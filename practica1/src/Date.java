@@ -1,5 +1,5 @@
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
-import javax.swing.text.html.HTMLDocument.RunElement;
+// import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
+// import javax.swing.text.html.HTMLDocument.RunElement;
 
 public class Date {
     // Declaring the variables that will be used in the class.
@@ -21,22 +21,7 @@ public class Date {
     // parameters. If the parameters are not valid, it sets the values of the variables day, month and
     // year to 1, 1 and 1900 respectively.
     public Date(int day, int month, int year){
-        if (day > 0 && day <= 31 && month > 0 && month <= 12 && year > 0){
-            this.day = day;
-            this.month = month;
-            this.year = year;
-            if(leapYeear(year)){
-                leapYear = true;
-            }else{
-                leapYear = false;
-            }
-        }
-        else{
-            day = 1;
-            month = 1;
-            year = 1900;
-        }
-        
+        validateDate(day, month, year);
     }
 
     // getters.
@@ -88,6 +73,38 @@ public class Date {
             leapYear = false;
         }
         return leapYear;
+    }
+
+    public void validateDate(int day, int month, int year){
+        if(checkDate(month, day, year) && year > 1900){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }else{
+            this.day = 1;
+            this.month = 1;
+            this.year = 1900;
+        }
+    }
+    
+    public boolean checkDate(int month, int day, int year){
+        if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
+            if(day > 0 && day <= 31){
+                return true;
+            }
+        }
+        else if(month == 4 || month == 6 || month == 9 || month == 11){
+            if(day > 0 && day <= 30){
+                return true;
+            }
+        }
+        else if(month == 2 && day > 0 && day <=29 && leapYeear(year)){
+            return true;
+        }
+        else if(month == 2 && day > 0 && day <=28 && !leapYeear(year)){
+            return true;
+        }
+        return false;
     }
 
     /**

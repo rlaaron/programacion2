@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class AppDate {
     public static void main(String[] args) {
-        Date date = new Date(10, 5, 2018);
+        Date date = new Date(80, 13, 1800);
         Scanner sn = new Scanner(System.in);
         boolean exit = false;
         int op; 
@@ -16,8 +16,9 @@ public class AppDate {
             System.out.println("7.Date after days");
             System.out.println("8.Next day");
             System.out.println("9.Before day");
-            System.out.println("10.Getters and setters");
-            System.out.println("11.Exit");
+            System.out.println("10.Get date");
+            System.out.println("11.Getters and setters");
+            System.out.println("12.Exit");
             try {
                 System.out.println("Select an option");
                 op = sn.nextInt();
@@ -63,6 +64,9 @@ public class AppDate {
                         System.out.println(date.backDay());
                         break;
                     case 10:
+                        System.out.println(date.toString());
+                        break;
+                    case 11:
                         while(!exit){
                             System.out.println("\n1.Set day");
                             System.out.println("2.Set month");
@@ -71,7 +75,7 @@ public class AppDate {
                             System.out.println("5.Get month");
                             System.out.println("6.Get year");
                             System.out.println("7.Get leap year");
-                            System.out.println("9.Exit");
+                            System.out.println("8.Exit");
                             System.out.println("Select an option");
                             op = sn.nextInt();
                             switch (op){
@@ -111,7 +115,7 @@ public class AppDate {
                             }
                         }
                         break;
-                    case 11:
+                    case 12:
                         exit = true;
                         break;
                     default:
