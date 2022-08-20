@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class AppDate {
     public static void main(String[] args) {
-        Date date = new Date(80, 13, 1800);
+        Date date = new Date(2, 5, 2012);
         Scanner sn = new Scanner(System.in);
         boolean exit = false;
         int op; 

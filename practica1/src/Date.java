@@ -60,9 +60,10 @@ public class Date {
     }
 
     public void setYear(int year){
-        this.year = year;
-        if(leapYeear(year)){
-            leapYear = true;
+        if(checkDate(month, day, year)){
+            this.year = year;
+        }else{
+            this.year = 1900;
         }
     }
 
@@ -89,6 +90,11 @@ public class Date {
             this.day = day;
             this.month = month;
             this.year = year;
+            if(leapYeear(year)){
+                this.leapYear = true;
+            }else{
+                this.leapYear = false;
+            }
         }else{
             this.day = 1;
             this.month = 1;
@@ -114,6 +120,7 @@ public class Date {
         else if(month == 2 && day > 0 && day <=28 && !leapYeear(year)){
             return true;
         }
+        
         return false;
     }
 
@@ -307,7 +314,7 @@ public class Date {
     }
 
     public String toString(){
-        return "Date: [day = " + day + ", month = " + month + ",year = " + year + "]\n";
+        return "Date: [day = " + day + ", month = " + month + ",year = " + year + ", leap year = "+ leapYear + ";]\n";
         
     }
     
