@@ -85,6 +85,15 @@ public class Date {
         return leapYear;
     }
 
+    /**
+     * This function checks if the date is valid and if it is, it sets the day, month, year and
+     * leapYear variables to the values passed in. If the date is not valid, it sets the day, month,
+     * year and leapYear variables to 1, 1, 1900 and false respectively
+     * 
+     * @param day the day of the month
+     * @param month the month of the year (1-12)
+     * @param year the year of the date
+     */
     public void validateDate(int day, int month, int year){
         if(checkDate(month, day, year) && year > 1900){
             this.day = day;
@@ -103,6 +112,14 @@ public class Date {
         }
     }
     
+    /**
+     * It checks if the date is valid or not
+     * 
+     * @param month The month of the year. Must be 1-12.
+     * @param day The day of the month.
+     * @param year the year to check
+     * @return The method is returning a boolean value.
+     */
     public boolean checkDate(int month, int day, int year){
         if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
             if(day > 0 && day <= 31){
