@@ -1,6 +1,3 @@
-// import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
-// import javax.swing.text.html.HTMLDocument.RunElement;
-
 public class Date {
     // Declaring the variables that will be used in the class.
     private int day;
@@ -16,10 +13,7 @@ public class Date {
         leapYear = false;
     }
 
-    // A constructor that takes three parameters, day, month and year. It checks if the parameters are
-    // valid and if they are, it sets the values of the variables day, month and year to the
-    // parameters. If the parameters are not valid, it sets the values of the variables day, month and
-    // year to 1, 1 and 1900 respectively.
+    // The constructor with parameters.
     public Date(int day, int month, int year){
         validateDate(day, month, year);
     }
@@ -56,14 +50,19 @@ public class Date {
         }else{
             this.month = 1;
         }
-        
     }
 
     public void setYear(int year){
         if(checkDate(month, day, year)){
             this.year = year;
+            if(leapYeear(year)){
+                this.leapYear = true;
+            }else{
+                this.leapYear = false;
+            }
         }else{
             this.year = 1900;
+            this.leapYear = false;
         }
     }
 
@@ -82,13 +81,14 @@ public class Date {
         }else {
             leapYear = false;
         }
-        return leapYear;
+        return leapYear; 
     }
 
     /**
      * This function checks if the date is valid and if it is, it sets the day, month, year and
      * leapYear variables to the values passed in. If the date is not valid, it sets the day, month,
      * year and leapYear variables to 1, 1, 1900 and false respectively
+     * this function is only used in the constructor.
      * 
      * @param day the day of the month
      * @param month the month of the year (1-12)
