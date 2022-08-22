@@ -30,5 +30,26 @@ public class PuntoR2 {
         this.x = y;
     }
 
+    // public double distancePoints(int x1, int y1, int x2, int y2){
+    //     double distance = Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)); 
+    //     return distance;
+    // }
+
+    public double distancePoints(PuntoR2 p1, PuntoR2 p2 ){
+        double distance = Math.sqrt((p1.getPx()-p2.getPx())*(p1.getPx()-p2.getPx())+(p1.getPy()-p2.getPy())*(p1.getPy()-p2.getPy()));
+        return distance;
+    }
     
+    public PuntoR2 midPoint(PuntoR2 p1, PuntoR2 p2){
+        int x = (p1.getPx()+p2.getPx())/2;
+        int y = (p1.getPy()+p2.getPy())/2;
+        PuntoR2 midPoint = new PuntoR2(x,y);
+        return midPoint;
+    }
+
+    @Override
+    public String toString(){
+        return "("+x+","+y+")";
+    }
+
 }
