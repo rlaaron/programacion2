@@ -6,7 +6,7 @@ public class AppDate {
         boolean exit = false;
         int op;
         while(!exit){
-           // Printing the menu.
+            // Printing the menu.
             System.out.println("\n1.Leap year check");
             System.out.println("2.Days in a month");
             System.out.println("3.Short date");
