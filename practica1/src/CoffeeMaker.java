@@ -64,9 +64,10 @@ public class CoffeeMaker {
         if (ammount<cup){
             ammount = 0;
             return "CoffeeMaker is empty the rest was served\n"; 
+        }else{
+            ammount = ammount - cup;
+            return "CoffeeMaker is now " + ammount + " ml\n";
         }
-        
-        return "CoffeeMaker has " + ammount + " ml\n";
     }
 
     /**

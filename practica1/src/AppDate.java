@@ -4,7 +4,7 @@ public class AppDate {
         Date date = new Date(2, 5, 2012);
         Scanner sn = new Scanner(System.in);
         boolean exit = false;
-        int op; 
+        int op;
         while(!exit){
            // Printing the menu.
             System.out.println("\n1.Leap year check");
@@ -123,6 +123,7 @@ public class AppDate {
                         break;
                 }
             } catch (Exception e) {
+                sn.next();
                 System.out.println("Invalid option");
             }
         } sn.close();

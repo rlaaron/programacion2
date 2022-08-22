@@ -8,6 +8,36 @@ public class AppBank {
         Scanner sn = new Scanner(System.in);
         boolean exit = false;
         int op; 
+
+        // do {
+        //     System.out.println("\n1. Deposit");
+        //     System.out.println("2. Withdraw");
+        //     System.out.println("3. Show balance");
+        //     System.out.println("4. Exit");
+        //     System.out.print("\nEnter your choice: ");
+        //     op = sn.nextInt();
+        //     switch (op) {
+        //         case 1:
+        //             System.out.print("\nEnter the amount to deposit: ");
+        //             int amount = sn.nextInt();
+        //             account.deposit(amount);
+        //             break;
+        //         case 2:
+        //             System.out.print("\nEnter the amount to withdraw: ");
+        //             amount = sn.nextInt();
+        //             account.withdraw(amount);
+        //             break;
+        //         case 3:
+        //             System.out.println("\nThe balance is: " + account.getBalance());
+        //             break;
+        //         case 4:
+        //             exit = true;
+        //             break;
+        //         default:
+        //             sn.next();
+        //             System.out.println("\nInvalid choice!");
+        //     }
+        // } while (!exit);
         while (!exit) {
             // Printing the menu options.
             System.out.println("\n1.Deposit");
@@ -16,6 +46,7 @@ public class AppBank {
             System.out.println("4.Get id");
             System.out.println("5.Exit");
             try {
+                
                 System.out.println("Select an option");
                 op = sn.nextInt();
                 switch (op) {
@@ -43,6 +74,7 @@ public class AppBank {
                         break;
                 }
             } catch (InputMismatchException e) {
+                sn.next();
                 System.out.println("Invalid option");
             }
         }sn.close();
