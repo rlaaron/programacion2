@@ -37,4 +37,22 @@ public class Menu {
         
         return choice;
     }
+    
+    public int menuFraction(){
+        try {
+            System.out.println("\tSelect an option: \n");
+            System.out.println("1.- Add fractions");
+            System.out.println("2.- Subtract fractions");
+            System.out.println("3.- Multiply fractions");
+            System.out.println("4.- Divide fractions");
+            System.out.println("5.- Print fraction");
+            System.out.println("6.- Exit");
+            choice = input.nextInt();
+        }catch(Exception e){
+            input.next();
+            choice = 10;
+        }
+        
+        return choice;
+    }
 }
