@@ -27,7 +27,7 @@ public class PuntoR2 {
     }
 
     public void setPy(int y){
-        this.x = y;
+        this.y = y;
     }
 
     // public double distancePoints(int x1, int y1, int x2, int y2){
