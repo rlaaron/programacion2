@@ -41,12 +41,29 @@ public class Menu {
     public int menuFraction(){
         try {
             System.out.println("\tSelect an option: \n");
-            System.out.println("1.- Add fractions");
-            System.out.println("2.- Subtract fractions");
-            System.out.println("3.- Multiply fractions");
-            System.out.println("4.- Divide fractions");
-            System.out.println("5.- Print fraction");
-            System.out.println("6.- Exit");
+            System.out.println("1.- Input fractions");
+            System.out.println("2.- Add fractions");
+            System.out.println("3.- Subtract fractions");
+            System.out.println("4.- Multiply fractions");
+            System.out.println("5.- Divide fractions");
+            System.out.println("6.- simplify fraction");
+            System.out.println("7.- Print fraction");
+            System.out.println("8.- Exit");
+            choice = input.nextInt();
+        }catch(Exception e){
+            input.next();
+            choice = 10;
+        }
+        
+        return choice;
+    }
+
+    public int subMenuFraction(){
+        try {
+            System.out.println("\tSelect an option: \n");
+            System.out.println("1.- Fraction 1");
+            System.out.println("2.- Fraction 2");
+            System.out.println("3.- Exit");
             choice = input.nextInt();
         }catch(Exception e){
             input.next();

@@ -32,6 +32,7 @@ public class Fraction {
         int newNumerator = ((a.getNumerator()*b.getDenominator())+(a.getDenominator()*b.getNumerator()));
         int newDenominator = ((a.getDenominator()*b.getDenominator()));
         Fraction add = new Fraction(newNumerator, newDenominator);
+        add = simplify(add);
         return add;
     }
 
@@ -39,6 +40,7 @@ public class Fraction {
         int newNumerator = ((a.getNumerator()*b.getDenominator())-(a.getDenominator()*b.getNumerator()));
         int newDenominator = ((a.getDenominator()*b.getDenominator()));
         Fraction subtract = new Fraction(newNumerator, newDenominator);
+        subtract = simplify(subtract);
         return subtract;
     }
 
@@ -46,6 +48,7 @@ public class Fraction {
         int newNumerator = (a.getNumerator()*b.getNumerator());
         int newDenominator = (a.getDenominator()*b.getDenominator());
         Fraction multiply = new Fraction(newNumerator, newDenominator);
+        multiply = simplify(multiply);
         return multiply;
     }
 
@@ -53,6 +56,7 @@ public class Fraction {
         int newNumerator = (a.getNumerator()*b.getDenominator());
         int newDenominator = (a.getDenominator()*b.getNumerator());
         Fraction divide = new Fraction(newNumerator, newDenominator);
+        divide = simplify(divide);
         return divide;
     }
 
