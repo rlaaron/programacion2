@@ -1,13 +1,15 @@
 public class AppPunto {
     public static void main(String[] args) throws Exception {
         Menu menu = new Menu();
-        int test; 
+        PuntoR2 p1 = new PuntoR2();
+        PuntoR2 p2 = new PuntoR2();
+        int menuMain; 
         boolean exit = false;        
         do {
-            test = menu.menuOptions();
-            switch(test){
+            menuMain = menu.menuPoint();
+            switch(menuMain){
                 case 1: 
-                    System.out.println("escogio 1");
+                    System.out.println(menu.subMenuPoint());
                     break;
                 case 2:
                     System.out.println("escogio 2");
