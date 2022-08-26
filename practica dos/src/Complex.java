@@ -3,8 +3,8 @@ public class Complex {
     private int imaginary;
 
     public Complex(){
-        this.real = 0;
-        this.imaginary = 0;
+        this.real = 10;
+        this.imaginary = 20;
     }
     public Complex(int real, int imaginary){
         this.real = real;

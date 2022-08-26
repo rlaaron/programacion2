@@ -72,4 +72,37 @@ public class Menu {
         
         return choice;
     }
+
+    public int menuComplex(){
+        try {
+            System.out.println("\tSelect an option: \n");
+            System.out.println("1.- Input complex numbers");
+            System.out.println("2.- Add complex numbers");
+            System.out.println("3.- Subtract complex numbers");
+            System.out.println("4.- Multiply complex numbers");
+            System.out.println("5.- Print complex numbers");
+            System.out.println("6.- Exit");
+            choice = input.nextInt();
+        }catch(Exception e){
+            input.next();
+            choice = 10;
+        }
+        
+        return choice;
+    }
+
+    public int subMenuComplex(){
+        try {
+            System.out.println("\tSelect an option: \n");
+            System.out.println("1.- Complex number 1");
+            System.out.println("2.- Complex number 2");
+            System.out.println("3.- Exit");
+            choice = input.nextInt();
+        }catch(Exception e){
+            input.next();
+            choice = 10;
+        }
+        
+        return choice;
+    }
 }
