@@ -30,21 +30,27 @@ public class PuntoR2 {
         this.y = y;
     }
 
-    // public double distancePoints(int x1, int y1, int x2, int y2){
-    //     double distance = Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2)); 
-    //     return distance;
-    // }
-
     public double distancePoints(PuntoR2 p1, PuntoR2 p2 ){
+
+        // // Calculating the distance between two points.
         double distance = Math.sqrt((p1.getPx()-p2.getPx())*(p1.getPx()-p2.getPx())+(p1.getPy()-p2.getPy())*(p1.getPy()-p2.getPy()));
+        // double distance = Math.sqrt((puntoUno.getPx()-puntoDos.getPx())*(puntoUno.getPx()-puntoDos.getPx())+(puntoUno.getPy()-puntoDos.getPy())*(puntoUno.getPy()-puntoDos.getPy()));
         return distance;
     }
     
+    /**
+     * The function takes two points and returns the midpoint of the line segment connecting them
+     * 
+     * @param p1 PuntoR2
+     * @param p2 PuntoR2
+     * @return The midpoint of the two points.
+     */
     public PuntoR2 midPoint(PuntoR2 p1, PuntoR2 p2){
         int x = (p1.getPx()+p2.getPx())/2;
         int y = (p1.getPy()+p2.getPy())/2;
         PuntoR2 midPoint = new PuntoR2(x,y);
         return midPoint;
+        
     }
 
     @Override
