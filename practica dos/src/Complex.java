@@ -85,12 +85,21 @@ public class Complex {
         return conjugate;
     }
 
+   /**
+    * // Java
+    * public double module(Complex a, Complex b){
+    *         return Math.sqrt((a.getReal()*b.getReal())+(a.getImaginary()*b.getImaginary()));
+    *     }
+    * 
+    * @param a Complex
+    * @param b the complex number that is being multiplied by the complex number a
+    * @return The module of the complex number.
+    */
+    public double module(Complex a, Complex b){
+        return Math.sqrt((a.getReal()*b.getReal())+(a.getImaginary()*b.getImaginary()));
+    }
+
     /**
-     * // Java
-     * public int angle(Complex a){
-     *         int angle = (int) Math.atan(a.getImaginary()/a.getReal());
-     *         return angle;
-     *     }
      * 
      * @param a Complex number
      * @return The angle of the complex number.
@@ -101,6 +110,11 @@ public class Complex {
     }
 
 
+    /**
+     * The toString() method returns a string representation of the object
+     * 
+     * @return The real and imaginary parts of the complex number.
+     */
     @Override
 
     public String toString(){
