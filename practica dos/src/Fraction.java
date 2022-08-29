@@ -37,11 +37,11 @@ public class Fraction {
      * @param b Fraction
      * @return The method is returning the sum of the two fractions.
      */
-    public Fraction add(Fraction a, Fraction b){
-        int newNumerator = ((a.getNumerator()*b.getDenominator())+(a.getDenominator()*b.getNumerator()));
-        int newDenominator = ((a.getDenominator()*b.getDenominator()));
+    public Fraction add(Fraction a){
+        int newNumerator = ((a.getNumerator()*this.denominator)+(a.getDenominator()*this.numerator));
+        int newDenominator = ((a.getDenominator()*this.denominator));
         Fraction add = new Fraction(newNumerator, newDenominator);
-        add = simplify(add);
+        add = simplifyPrivate(add);
         return add;
     }
 
@@ -52,11 +52,11 @@ public class Fraction {
      * @param b Fraction
      * @return The difference between the two fractions.
      */
-    public Fraction subtract(Fraction a, Fraction b){
-        int newNumerator = ((a.getNumerator()*b.getDenominator())-(a.getDenominator()*b.getNumerator()));
-        int newDenominator = ((a.getDenominator()*b.getDenominator()));
+    public Fraction subtract(Fraction a){
+        int newNumerator = ((a.getNumerator()*this.denominator)-(a.getDenominator()*this.numerator));
+        int newDenominator = ((a.getDenominator()*this.denominator));
         Fraction subtract = new Fraction(newNumerator,newDenominator);
-        subtract = simplify(subtract);
+        subtract = simplifyPrivate(subtract);
         return subtract;
     }
 
@@ -67,11 +67,11 @@ public class Fraction {
      * @param b Fraction
      * @return The method is returning the simplified version of the fraction.
      */
-    public Fraction multiply(Fraction a, Fraction b){
-        int newNumerator = (a.getNumerator()*b.getNumerator());
-        int newDenominator = (a.getDenominator()*b.getDenominator());
+    public Fraction multiply(Fraction a){
+        int newNumerator = (a.getNumerator()*this.numerator);
+        int newDenominator = (a.getDenominator()*this.denominator);
         Fraction multiply = new Fraction(newNumerator, newDenominator);
-        multiply = simplify(multiply);
+        multiply = simplifyPrivate(multiply);
         return multiply;
     }
 
@@ -81,11 +81,11 @@ public class Fraction {
      * @param b Fraction@1b6d3586
      * @return The method is returning the simplified fraction.
      */
-    public Fraction divide(Fraction a, Fraction b){
-        int newNumerator = (a.getNumerator()*b.getDenominator());
-        int newDenominator = (a.getDenominator()*b.getNumerator());
+    public Fraction divide(Fraction a){
+        int newNumerator = (a.getNumerator()*this.denominator);
+        int newDenominator = (a.getDenominator()*this.numerator);
         Fraction divide = new Fraction(newNumerator, newDenominator);
-        divide = simplify(divide);
+        divide = simplifyPrivate(divide);
         return divide;
     }
 
@@ -95,12 +95,20 @@ public class Fraction {
      * @param a Fraction
      * @return The simplified fraction.
      */
-    public Fraction simplify(Fraction a){
+    public Fraction simplify(){
+        int mcd=mcd(this.numerator,this.denominator);
+        int newNumerator = this.numerator/mcd;
+        int newDenominator = this.denominator/mcd;
+        Fraction simplifyPrivate=new Fraction(newNumerator,newDenominator);
+        return simplifyPrivate;
+    }
+    
+    private Fraction simplifyPrivate(Fraction a){
         int mcd=mcd(a.numerator,a.denominator);
         int newNumerator = a.getNumerator()/mcd;
         int newDenominator = a.getDenominator()/mcd;
-        Fraction simplify=new Fraction(newNumerator,newDenominator);
-        return simplify;
+        Fraction simplifyPrivate=new Fraction(newNumerator,newDenominator);
+        return simplifyPrivate;
     }
     
   /**
