@@ -2,8 +2,8 @@ import java.util.Scanner;
 public class AppFraction {
     public static void main(String[] args) {
         Menu menu = new Menu();
-        Fraction a = new Fraction(12,4);
-        Fraction b = new Fraction(10,5);
+        Fraction a = new Fraction();
+        Fraction b = new Fraction();
         Scanner input = new Scanner(System.in);
         int menuMain; 
         boolean exit = false;        
@@ -37,19 +37,20 @@ public class AppFraction {
                     } while (!exit2); 
                     break;
                 case 2:
-                    System.out.println(a.add(a,b));
+                    System.out.println(a.add(b));
                     break;
                 case 3:
-                    System.out.println(a.subtract(a,b));
+                    System.out.println(a.subtract(b));
                     break;
                 case 4:
-                    System.out.println(a.multiply(a,b));
+                    System.out.println(a.multiply(b));
                     break;
                 case 5:
-                    System.out.println(a.divide(a,b));
+                    System.out.println(a.divide(b));
                     break;
                 case 6:
-                    System.out.println(a.simplify(a));
+                    System.out.println("Fraction simplified a: " + a.simplify());
+                    System.out.println("Fraction simplified b: " + b.simplify());
                     break;
                 case 7:
                     String fractions = "Fraction 1: " + a.toString()+" Fraction 2: " + b.toString();
