@@ -80,8 +80,11 @@ public class Menu {
             System.out.println("2.- Add complex numbers");
             System.out.println("3.- Subtract complex numbers");
             System.out.println("4.- Multiply complex numbers");
-            System.out.println("5.- Print complex numbers");
-            System.out.println("6.- Exit");
+            System.out.println("5.- Conjugate complex number");
+            System.out.println("6.- Modulus complex numbers");
+            System.out.println("7.- Angle number");
+            System.out.println("8.- Print complex numbers");
+            System.out.println("9.- Exit");
             choice = input.nextInt();
         }catch(Exception e){
             input.next();
