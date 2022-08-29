@@ -30,10 +30,10 @@ public class PuntoR2 {
         this.y = y;
     }
 
-    public double distancePoints(PuntoR2 p1, PuntoR2 p2 ){
+    public double distancePoints(PuntoR2 p1){
 
         // // Calculating the distance between two points.
-        double distance = Math.sqrt((p1.getPx()-p2.getPx())*(p1.getPx()-p2.getPx())+(p1.getPy()-p2.getPy())*(p1.getPy()-p2.getPy()));
+        double distance = Math.sqrt((p1.getPx()-this.x)*(p1.getPx()-this.x)+(p1.getPy()-this.y)*(p1.getPy()-this.y));
         // double distance = Math.sqrt((puntoUno.getPx()-puntoDos.getPx())*(puntoUno.getPx()-puntoDos.getPx())+(puntoUno.getPy()-puntoDos.getPy())*(puntoUno.getPy()-puntoDos.getPy()));
         return distance;
     }
@@ -45,14 +45,12 @@ public class PuntoR2 {
      * @param p2 PuntoR2
      * @return The midpoint of the two points.
      */
-    public PuntoR2 midPoint(PuntoR2 p1, PuntoR2 p2){
-        int x = (p1.getPx()+p2.getPx())/2;
-        int y = (p1.getPy()+p2.getPy())/2;
+    public PuntoR2 midPoint(PuntoR2 p1){
+        int x = (p1.getPx()+this.x)/2;
+        int y = (p1.getPy()+this.y)/2;
         PuntoR2 midPoint = new PuntoR2(x,y);
         return midPoint;
-        
     }
-
     @Override
     public String toString(){
         return "("+x+","+y+")";
