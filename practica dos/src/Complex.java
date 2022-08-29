@@ -36,9 +36,9 @@ public class Complex {
      * @param b (2, 3)
      * @return The method is returning the sum of the two complex numbers.
      */
-    public Complex add(Complex a, Complex b){
-        int newReal = a.getReal()+b.getReal();
-        int newImaginary = a.getImaginary()+b.getImaginary();
+    public Complex add(Complex a){
+        int newReal = a.getReal()+this.real;
+        int newImaginary = a.getImaginary()+this.imaginary;
         Complex add = new Complex(newReal, newImaginary);
         return add;
     }
@@ -51,9 +51,9 @@ public class Complex {
      * @param b (2, 3)
      * @return The difference between the two complex numbers.
      */
-    public Complex subtract(Complex a, Complex b){
-        int newReal = a.getReal()-b.getReal();
-        int newImaginary = a.getImaginary()-b.getImaginary();
+    public Complex subtract(Complex a){
+        int newReal = a.getReal()-this.real;
+        int newImaginary = a.getImaginary()-this.imaginary;
         Complex subtract = new Complex(newReal, newImaginary);
         return subtract;
     }
@@ -65,9 +65,9 @@ public class Complex {
      * @param b (2, 3)
      * @return The method is returning the product of the two complex numbers.
      */
-    public Complex multiply(Complex a, Complex b){
-        int newReal = (a.getReal()*b.getReal())-(a.getImaginary()*b.getImaginary());
-        int newImaginary = (a.getReal()*b.getImaginary())+(a.getImaginary()*b.getReal());
+    public Complex multiply(Complex a){
+        int newReal = (a.getReal()*this.real)-(a.getImaginary()*this.imaginary);
+        int newImaginary = (a.getReal()*this.imaginary)+(a.getImaginary()*this.real);
         Complex multiply = new Complex(newReal, newImaginary);
         return multiply;
     }
@@ -78,9 +78,9 @@ public class Complex {
      * @param a The complex number to be conjugated
      * @return The conjugate of the complex number.
      */
-    public Complex conjugate(Complex a){
-        int newReal = a.getReal();
-        int newImaginary = a.getImaginary()*-1;
+    public Complex conjugate(){
+        int newReal = this.real;
+        int newImaginary = this.imaginary*-1;
         Complex conjugate = new Complex(newReal, newImaginary);
         return conjugate;
     }
@@ -88,15 +88,15 @@ public class Complex {
    /**
     * // Java
     * public double module(Complex a, Complex b){
-    *         return Math.sqrt((a.getReal()*b.getReal())+(a.getImaginary()*b.getImaginary()));
+    *         return Math.sqrt((a.getReal()*this.real)+(a.getImaginary()*b.getImaginary()));
     *     }
     * 
     * @param a Complex
     * @param b the complex number that is being multiplied by the complex number a
     * @return The module of the complex number.
     */
-    public double module(Complex a, Complex b){
-        return Math.sqrt((a.getReal()*b.getReal())+(a.getImaginary()*b.getImaginary()));
+    public double module(){
+        return Math.sqrt((this.real*this.real)+(this.imaginary*this.imaginary));
     }
 
     /**
@@ -104,8 +104,8 @@ public class Complex {
      * @param a Complex number
      * @return The angle of the complex number.
      */
-    public int angle(Complex a){
-        int angle = (int) Math.atan(a.getImaginary()/a.getReal());
+    public int angle(){
+        int angle = (int) Math.atan(this.imaginary/this.real);
         return angle;
     }
 
