@@ -37,24 +37,25 @@ public class AppComplex {
                     } while (!exit2); 
                     break;
                 case 2:
-                    System.out.println(a.add(a,b));
+                    System.out.println(a.add(b));
                     break;
                 case 3:
-                    System.out.println(a.subtract(a,b));
+                    System.out.println(a.subtract(b));
                     break;
                 case 4:
-                    System.out.println(a.multiply(a,b));
+                    System.out.println(a.multiply(b));
                     break;
                 case 5:
-                    System.out.println("Conjugate of a: " + a.conjugate(a));
-                    System.out.println("Conjugate of b: " + b.conjugate(b));
+                    System.out.println("Conjugate of a: " + a.conjugate());
+                    System.out.println("Conjugate of b: " + b.conjugate());
                     break;
                 case 6:
-                    System.out.println("Modulus: " + a.module(a,b));
+                    System.out.println("Modulus a: " + a.module());
+                    System.out.println("Modulus b: " + b.module());
                     break;
                 case 7:
-                    System.out.println("Angle of a: " + a.angle(a));
-                    System.out.println("Angle of b: " + b.angle(b));
+                    System.out.println("Angle of a: " + a.angle());
+                    System.out.println("Angle of b: " + b.angle());
                     break;
                 case 8:
                     String complex = "Complex 1: " + a.toString()+" Complex 2: " + b.toString();
