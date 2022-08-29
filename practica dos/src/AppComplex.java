@@ -2,8 +2,8 @@ import java.util.Scanner;
 public class AppComplex {
     public static void main(String[] args){
         Menu menu = new Menu(); 
-        Complex a = new Complex();
-        Complex b = new Complex();
+        Complex a = new Complex(1,10);
+        Complex b = new Complex(4,5);
         Scanner input = new Scanner(System.in);
         int menuMain; 
         boolean exit = false;        
@@ -46,10 +46,21 @@ public class AppComplex {
                     System.out.println(a.multiply(a,b));
                     break;
                 case 5:
+                    System.out.println("Conjugate of a: " + a.conjugate(a));
+                    System.out.println("Conjugate of b: " + b.conjugate(b));
+                    break;
+                case 6:
+                    System.out.println("Modulus: " + a.module(a,b));
+                    break;
+                case 7:
+                    System.out.println("Angle of a: " + a.angle(a));
+                    System.out.println("Angle of b: " + b.angle(b));
+                    break;
+                case 8:
                     String complex = "Complex 1: " + a.toString()+" Complex 2: " + b.toString();
                     System.out.println(complex);
                     break;
-                case 6:
+                case 9:
                     exit = true;
                     break;
                 default:
