@@ -37,10 +37,10 @@ public class AppPunto {
                     } while (!exit2); 
                     break;
                 case 2:
-                    System.out.println(p1.distancePoints(p1,p2));
+                    System.out.println(p1.distancePoints(p2));
                     break;
                 case 3:
-                    System.out.println(p1.midPoint(p1,p2));
+                    System.out.println(p1.midPoint(p2));
                     break;
                 case 4:
                     String points = p1.toString()+" "+p2.toString();
