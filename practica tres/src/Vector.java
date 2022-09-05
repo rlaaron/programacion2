@@ -55,11 +55,13 @@ public class Vector {
         return punto;
     }
     
+
     public Vector ProductoCruz(Vector v){
         Vector producto= new Vector((this.y*v.getZ()-v.getY()*this.z), (v.getX()*this.z-this.x*v.getZ()),(this.x*v.getY()-v.getX()*this.y) );
         return producto;
     }
     
+
     public String toString() {
         return "(" + x + ", " + y + ", " + z + ")";
     }
