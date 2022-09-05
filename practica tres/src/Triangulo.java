@@ -53,6 +53,8 @@ public class Triangulo {
         double area = ((base.distancia()*altura()/2));
         return area;
     }
-
-    
+    @Override
+    public String toString(){
+        return "Triangulo{" + "p1=" + p1 + ", p2=" + p2 + ", p3=" + p3 + '}';
+    }
 }
