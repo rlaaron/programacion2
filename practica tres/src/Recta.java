@@ -23,9 +23,14 @@ public class Recta {
         this.p2 = p2;
     }
 
-    public double distancia(){
-        // double distancia=Math.sqrt((this.p1.getX()-this.p2.getX())(this.p1.getX()-this.p2.getX())+(this.p1.getY()-this.p2.getY())(this.p1.getY()-this.p2.getY()));
-        double distancia = Math.sqrt(Math.pow((this.p1.getX() - this.p2.getX()), 2) + Math.pow((this.p1.getY() - this.p2.getY()), 2));
+    // public double distancia(){
+    //     // double distancia=Math.sqrt((this.p1.getX()-this.p2.getX())(this.p1.getX()-this.p2.getX())+(this.p1.getY()-this.p2.getY())(this.p1.getY()-this.p2.getY()));
+    //     double distancia = Math.sqrt(Math.pow((this.p1.getX() - this.p2.getX()), 2) + Math.pow((this.p1.getY() - this.p2.getY()), 2));
+    //     return distancia; 
+    // }
+
+    public double distanciaPunto(Punto p1){
+        double distancia = Math.sqrt(Math.pow((this.p1.getX() - p1.getX()), 2) + Math.pow((this.p1.getY() - p1.getY()), 2));
         return distancia; 
     }
 
