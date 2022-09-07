@@ -26,5 +26,12 @@ public class Punto {
     public void setY(double y) {
         this.y = y;
     }
+
+    public double distancia(Punto p) {
+        double distancia;
+        distancia = Math.sqrt(Math.pow((p.getX() - this.x), 2) + Math.pow((p.getY() - this.y), 2));
+        return distancia;
+    }
+    
 }
 
