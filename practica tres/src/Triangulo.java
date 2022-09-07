@@ -29,32 +29,21 @@ public class Triangulo {
      public void setP3(Punto p3){
         this.p3=p3;
     }
-    public double altura(){
-        Recta r1= new Recta(p1, p2);
-        Recta r2= new Recta(p1, p3);
-        Recta r3= new Recta(p2, p3);
-        double a = r1.distancia();
-        double b = r2.distancia();
-        double c = r3.distancia();
-        double s = ((a+b+c)/2);
-        double h = ((2 / a) * Math.sqrt(s * (s - a) * (s - b) * (s - c)));
-        return h;
-    }
     public double perimetro(){
-        Recta r1= new Recta(p1, p2);
-        Recta r2= new Recta(p1, p3);
-        Recta r3= new Recta(p2, p3);
-        double perimetro= (r1.distancia()+r2.distancia()+r3.distancia());
+        double perimetro = p1.distancia(p2)+p2.distancia(p3)+p3.distancia(p1);
         return perimetro;
     }
     
     public double area(){
-        Recta base = new Recta(p1, p2);
-        double area = ((base.distancia()*altura()/2));
+        Recta r = new Recta(p1,p2);
+        double h =  r.distanciaPunto(p3);
+        double base = p1.distancia(p2);
+        double area = base*h/2;
         return area;
     }
     @Override
     public String toString(){
         return "Triangulo{" + "p1=" + p1 + ", p2=" + p2 + ", p3=" + p3 + '}';
     }
+
 }
