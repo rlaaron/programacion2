@@ -1,17 +1,15 @@
 public class Patient {
-    private int id,age,metricsCount;
+    private int id,age;
     private String name, gender;
-    private Metric[] metrics;
 
-    public Patient (int id, int age, int metricsCount, String name, String gender){
+
+    public Patient (int id, int age, String name, String gender){
         this.id = id;
         this.age = age;
-        this.metricsCount = metricsCount;
         this.name = name;
         this.gender = gender;
-        metrics = new Metric[100];
-        metricsCount = 0;
     }
+
 
     //setters and getters
     public int getId() {
@@ -30,10 +28,6 @@ public class Patient {
         this.age = age;
     }
 
-    public int getMetricsCount() {
-        return metricsCount;
-    }
-
     public String getName() {
         return name;
     }
@@ -42,5 +36,17 @@ public class Patient {
         this.name = name;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender){
+        this.gender = gender;
+    }
+
+
+    public String toString(){
+        return "name: "+ name + " age: " + age + " gender: " + gender + " id: " + id;    
+    }
 
 }
