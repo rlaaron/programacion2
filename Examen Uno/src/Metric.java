@@ -1,46 +1,60 @@
 public class Metric {
     private Date date;
-    private int weight, height;
+    private double weight, height;
+    private int patientId;
+    private String bmi;
 
-    public Metric(Date date, int weight, int height) {
+    public Metric(Date date, double weight, double height, int patientId) {
         this.date = date;
         this.weight = weight;
         this.height = height;
+        this.patientId = patientId;
+        this.bmi = bmi();
     }
-
-    public Metric() {
-        this.date = new Date();
-        this.weight = 0;
-        this.height = 0;
-    }
-
+    //setters and getters
     public Date getDate() {
         return date;
     }
-
     public void setDate(Date date) {
         this.date = date;
     }
-
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
-
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
-
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
-
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
+    public int getPatientId() {
+        return patientId;
+    }
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
+    }
 
-    @Override
+    public String bmi(){
+        double bmi = weight / (height * height);
+        if (bmi < 18.5) {
+            return "Underweight";
+        } else if (bmi < 25) {
+            return "Normal";
+        } else if (bmi < 30) {
+            return "Overweight";
+        } else if(bmi<40){
+            return "Obesity";
+        } else {
+            return "Morbid obesity";
+        }
+    }
+
+    // @Override
 
     public String toString() {
-        return "Metrics [date=" + date + ", height=" + height + ", weight=" + weight + "]";
+        return "\tMetrics: " + date + ", height=" + height + ", weight=" + weight + ", bmi = " + bmi;
     }
 }
