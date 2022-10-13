@@ -1,77 +1,66 @@
 public class Rhombus {
-    private int size = 0;
-    private String word[];
-    // private String word;
+    private String word;
 
-    // private String word;
+    public Rhombus(String word) {
+        if(word.length() > 10) {
+            this.word = word.substring(0, 10);
+            System.out.println("The word is too long, it will be cut to 10 characters");
+            System.out.println("New word: " + this.word);
+        } else {
+            this.word = word;
+        }
+    }
 
-    // public Rhombus(int size, String word) {
-    //     this.size = size;
-    //     this.word = word;
-    // }
-    public Rhombus(int size, String word[]) {
-        this.size = size;
-        this.word = new String[10];
+    //getters and setters
+    public String getWord() {
+        return word;
+    }
+
+    public void setWord(String word) {
         this.word = word;
     }
 
-    // getters and setters
-    public int getSize() {
-        return size;
-    }
-
-    // public String[] getWord() {
-    //     return word;
-    // }
-
-    // public void setWord(String word[]) {
-    //     this.word = word;
-    // }
-
-    // public void setSize(int size) {
-    //     this.size = size;
-    // }
-
-    // print rhombus
     public void printRhombus() {
+        int length = word.length();
         int i, j, k;
-        // String []rword = word.split(" ");
-        for (i = 0; i < size+1; i++) {
-            for (j = 0; j < size - i; j++) {
-                System.out.print(" ");
+        for(j = 0; j<length; j++) {
+            for(i = length-j-1; i>0; i--){
+                System.out.print("   ");
             }
-            for (k = 0; k < i; k++) {
-                System.out.print(word[k] + " ");
-            }
-            try{
-                if(word[i]==null){
-                    k--;
-                    System.out.print(word[k]);
+            for(i = 0; i<length; i++){
+                if(i<=j){
+                    System.out.print(" "+word.charAt(i)+" ");
                 }
-
-            }catch(Exception e){
-                System.out.println("Error: " + e);
             }
-            
-            // System.out.println(word[i]);
+            for(i = length-1; i>=0; i--){
+                if(i<j){
+                    System.out.print(" "+word.charAt(i)+" ");
+                }
+            }
+            for(k=length-j-1;k>0;k--){
+                System.out.print("   ");
+            }
+            System.out.print("\n");
         }
-        // System.out.println(word);
-        for (i = size - 1; i > 0; i--) {
-            for (j = 0; j < size - i; j++) {
-                System.out.print(" ");
+
+        for(j = length-2; j>=0; j--) {
+            for(i = length-j-1; i>0; i--){
+                System.out.print("   ");
             }
-            for (k = 0; k < i; k++) {
-                System.out.print(word[k] + " ");
+            for(i = 0; i<length; i++){
+                if(i<=j){
+                    System.out.print(" "+word.charAt(i)+" ");
+                }
             }
-            System.out.println(word[i]);
+            for(i = length-1; i>=0; i--){
+                if(i<j){
+                    System.out.print(" "+word.charAt(i)+" ");
+                }
+            }
+            for(k = length-j-1; k>0; k--){
+                System.out.print("   ");
+            }
+            System.out.print("\n");
         }
-    } 
-
-    // public String print() {
-    //     String r = "hola test";
-    //     String []rword = r.split("");
-    //     return rword[1];
-    // }
-    
-
+    }
 }
