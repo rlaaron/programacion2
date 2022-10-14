@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public abstract class Termometro implements Estadistica {
+public abstract class Termometro implements Estadistica, Temperatura {
     private double grados;
     private ArrayList<Double> memoria;
 
