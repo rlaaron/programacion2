@@ -1,4 +1,4 @@
-public class TermometroCelsius extends Termometro implements Temperatura {
+public class TermometroCelsius extends Termometro  {
     public TermometroCelsius(double grados) {
         super(grados);
     }
