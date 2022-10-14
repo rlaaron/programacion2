@@ -1,4 +1,4 @@
-public class TermometroFahrenheit extends Termometro implements Temperatura {
+public class TermometroFahrenheit extends Termometro {
     public TermometroFahrenheit(double grados) {
         super(grados);
     }
