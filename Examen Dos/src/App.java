@@ -1,14 +1,25 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class App {
+    public static void printStore(ArrayList<Animal> animals){
+        for (Animal animal : animals) {
+            System.out.println(animal);
+        }
+    }
+    
+    public static void defaultAnimals(ArrayList<Animal> animals){
+        animals.add(new Cat("Garfield", 100, 5));
+        animals.add(new Cat("Tom", 150, 15));
+        animals.add(new Dog("Snoopy", 200, true , 2));
+        animals.add(new Dog("Bolt", 250, false, 1));
+        animals.add(new Dog("Rocky", 400, true, 6));
+    }
+
     public static void update(ArrayList<Animal> animals, Scanner sc){
         for(Animal animal : animals){
             if (animal instanceof Dog){
                 System.out.println("My name is " + animal.getName() + " and my price is " + animal.getPrice());
-                if(!((Dog) animal).isSterilized()){
-                    ((Dog) animal).sterilizer();
-                    System.out.println("sterilizing " + animal.getName());
-                }
+                ((Dog) animal).sterilizer();    
             }else if (animal instanceof Cat){
                 System.out.println("My name is " + animal.getName() + " and my price is " + animal.getPrice());
                 System.out.println("Has  " + animal.getName() + " the cat lost any life?");
@@ -20,23 +31,12 @@ public class App {
             }
         }
     }
+
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         ArrayList<Animal> animals = new ArrayList<Animal>();
-        Cat cat = new Cat("Garfield", 100);
-        Cat cat2 = new Cat("Tom", 150);
-        Dog dog = new Dog("Snoopy", 200, false);
-        Dog dog2 = new Dog("Bolt", 250, false);
-        Dog dog3 = new Dog("Rocky", 400, false);
-        animals.add(cat);
-        animals.add(cat2);
-        animals.add(dog);
-        animals.add(dog2);
-        animals.add(dog3);
-        for (Animal animal : animals) {
-            animal.sound();
-            System.out.println(animal);
-        }
+        defaultAnimals(animals);
+        printStore(animals);
         update(animals, sc);
     }
 }

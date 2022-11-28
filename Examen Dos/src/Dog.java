@@ -1,8 +1,8 @@
 public class Dog extends Animal {
     private boolean sterilized;
 
-    public Dog(String name, double price, boolean sterilized) {
-        super(name, price);
+    public Dog(String name, double price, boolean sterilized, int age) {
+        super(name, price, age);
         this.sterilized = sterilized;
     }
 
@@ -15,7 +15,8 @@ public class Dog extends Animal {
     }
 
     public void sterilizer(){
-        if (this.sterilized == false){
+        if (!this.sterilized){
+            System.out.println("sterilizing " + getName());
             this.sterilized = true;
         }else{
             System.out.println("The dog is already sterilized");
@@ -30,6 +31,6 @@ public class Dog extends Animal {
     @Override
     public String toString(){
         String children = sterilized ? " i can have puppys" : "i cant have puppys";
-        return " Im " + getName() + " a DOG and " + children + " and my price is " + getPrice();
+        return " Im " + getName() + " a DOG and " + children + " and my price is " + getPrice() + " Im : " + getAge() + " years old";
     }
 }

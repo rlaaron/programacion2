@@ -1,0 +1,20 @@
+@startuml  App
+
+App --|> interface Sound
+
+class App {
+
+}
+
+interface Sound {
+    +sound(): void
+}
+
+class Animal {
+    -name: string
+    -price: double
+    -age: int
+
+    
+}
+@enduml
