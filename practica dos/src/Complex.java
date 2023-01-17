@@ -37,11 +37,9 @@ public class Complex {
      * @return The method is returning the sum of the two complex numbers.
      */
     public Complex add(Complex a){
-        int newReal = a.getReal()+this.real;
-        int newImaginary = a.getImaginary()+this.imaginary;
-        Complex add = new Complex(newReal, newImaginary);
-        return add;
+        return new Complex(a.getReal()+this.real, a.getImaginary()+this.imaginary);
     }
+
 
     /**
      * This function takes two complex numbers, a and b, and returns a new complex number that is the
@@ -109,6 +107,13 @@ public class Complex {
         return angle;
     }
 
+    public Boolean same(Complex a){
+        if(this.real == a.getReal() && this.imaginary == a.getImaginary()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     /**
      * The toString() method returns a string representation of the object
